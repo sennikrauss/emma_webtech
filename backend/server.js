@@ -27,6 +27,8 @@ app.get("/", (req, res) => {
     res.json({ message: "Hello Tante Emma!" });
 });
 
+require("./app/routes/routes.js")(app);
+
 // set port, listen for requests
 app.listen(3000, () => {
     console.log("Server is running on port 3000.");
