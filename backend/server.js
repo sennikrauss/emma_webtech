@@ -5,6 +5,7 @@
  *
  * Schritt 6
  * Routes (artikel.routes.js) einlesen über require
+ * Test
  * @type {e | (() => Express)}
  */
 const express = require("express");
