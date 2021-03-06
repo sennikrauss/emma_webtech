@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
-}
+
+ngOnInit(){}
+  navbarOpen=false;
+
+toggleNavbar(){
+  this.navbarOpen=!this.navbarOpen!;
+                 }
+  }
