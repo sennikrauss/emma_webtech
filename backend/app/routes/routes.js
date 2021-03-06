@@ -33,4 +33,8 @@ module.exports = app => {
     app.delete("/category/:categoryId", category.delete);
     app.delete("/location/:locationId", location.delete);
 
+    //filtered articles by category and location id
+    app.get("/articles/filteredCategory/:categoryId", article.findAllArticlesByCategoryId);
+    app.get("/articles/filteredLocation/:locationId", article.findAllArticlesByLocationId);
+
 };
