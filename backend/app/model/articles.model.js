@@ -29,8 +29,11 @@ Article.create = (newArtikel, result) => {
     });
 };
 
+//hier sind die values der spalten location und category schon als string und nicht mehr number, weil schon verbunden mit Tabellen storagelocation und categories
 Article.findById = (artikelId, result) => {
-    sql.query(`SELECT * FROM articles WHERE id = ${artikelId}`, (err, res) => {
+    sql.query(`SELECT a.id,a.articleDescription,a.producerName,a.unit,a.items,c.category,l.location,
+a.purchaseDate,a.expirationDate,a.purchasingPrice_net FROM articles a JOIN categories c ON a.category=c.id JOIN
+storagelocation l ON a.location=l.id WHERE a.id = ${artikelId}`, (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(err, null);
