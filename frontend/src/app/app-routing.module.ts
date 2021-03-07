@@ -6,8 +6,11 @@ import { CategoriesComponent } from './categories/categories.component';
 
 const routes: Routes = [
 {path: 'locations', component:  LocationsComponent },
-  {path: 'home', component:  HomeComponent },
-  {path: 'categories', component: CategoriesComponent },
+{path: 'home', component:  HomeComponent },
+{path: 'categories', component: CategoriesComponent },
+
+// otherwise redirect to home
+{ path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({
