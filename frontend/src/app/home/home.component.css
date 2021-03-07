@@ -1,1 +1,8 @@
+ h1 { text-align: center;
+          color :#faf6ea;
+         font-family: 'Angular', arial;
+         font-size: 48px;
+         text-shadow: 6px 6px 6px Black;
+         color-shadow: black;
+        }
 #card1 { background-color:#faf3ea; }
