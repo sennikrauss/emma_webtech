@@ -1,6 +1,17 @@
+h1{
+  text-align:center;
+  margin-top:6px;
+
+}
+
 body{ background-color: #f6f1e6;}
 
-h1{
-text-align:center;
-margin-top:6px;
-   }
+img{
+  cursor: pointer;
+  background-color: #f6dfab;
+  border-color: #f6dfab;
+}
+
+div.card-group{
+  width: 33.33%;
+}

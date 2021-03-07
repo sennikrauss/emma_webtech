@@ -15,9 +15,7 @@ export class ArticlesComponent implements OnInit {
 
   articles:Article[];
   article:Article;
-  selectedArticleId:number;
-  selectedCategoryId:number;
-  selectedLocationId:number;
+  selectedArticleId; selectedCategoryId;selectedLocationId:number;
   error: HttpErrorResponse;
   closeResult='';
   form=FormGroup;
@@ -30,10 +28,10 @@ export class ArticlesComponent implements OnInit {
     private modalService: NgbModal,
     private fb:FormBuilder,
   ) {
-    // Konfiguration des modalen Dialogs
+    // Configuration modal Dialog
     config.backdrop = 'static';   // schliesst nicht, wenn man in das Fenster dahinter klickt
     config.keyboard = false;      // Modaler Dialog kann nicht durch ESC beendet werden
-    // Formular fuer delete
+    // Form for delete
     // @ts-ignore
     this.form = this.fb.group(
       {

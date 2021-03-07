@@ -1,1 +1,55 @@
-<p>articles works!</p>
+<body class="table-scrollable">
+<h1> Sortiment </h1>
+<hr>
+<div *ngIf="selectedCategoryId==0 || selectedCategoryId!=0 || selectedLocationId!=0" class="container">
+  <button type="button" class="btn btn-success" [routerLink]="['/article/create']">add new Article</button>
+  <table class="table table-condensed table-hover">
+    <caption>List of Articles</caption>
+    <thead>
+    <tr>
+      <th>Edit</th>
+      <th>Delete</th>
+      <th>Nr.</th>
+      <th>Artikelbezeichnung</th>
+      <th>Herstellername</th>
+      <th>Einheit</th>
+      <th>Stueckzahl</th>
+      <th>Kategorie</th>
+      <th>Lagerort</th>
+      <th>Kaufdatum</th>
+      <th>Verfallsdatum</th>
+      <th>Netto_Einkaufspreis</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let article of articles; let i=index; trackBy: trackByData">
+      <td><a>
+        <i-bs
+          name="pencil-square"
+          class="text-secondary"
+          width="1em"
+          height="1em">
+        </i-bs>
+      </a></td>
+
+      <td><i-bs
+        name="trash"
+        class="text-secondary"
+        width="1em"
+        height="1em">
+      </i-bs></td>
+
+      <td>{{ i+1 }}</td>
+      <td>{{article.articleDescription}}</td>
+      <td>{{article.producerName}}</td>
+      <td>{{article.unit}}</td>
+      <td>{{article.items}}</td>
+      <td>{{article.category}}</td>
+      <td>{{article.location}}</td>
+      <td>{{article.purchaseDate}}</td>
+      <td>{{article.expirationDate}}</td>
+      <td>{{article.purchasingPrice_net}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

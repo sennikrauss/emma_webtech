@@ -1,0 +1,41 @@
+.container{
+  margin-left: 1rem;
+  width: 100%;
+}
+
+div button{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #567267;
+  border-width: 0;
+}
+
+.table-scrollable{
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+th{
+  background-color: #f6f1e6;
+}
+
+.table-scrollable::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+}
+
+.table-scrollable::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 3px solid #fff;
+  background-color: rgba(0, 0, 0, .3);
+}
+
+h1{ color:black;
+  text-align:center;
+  margin-top:6px;
+}
+
+
+/**body{ background-color: #f6f1e6;}*/

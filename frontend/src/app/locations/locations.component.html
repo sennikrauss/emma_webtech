@@ -1,55 +1,35 @@
-<body>
-<h1>Lagerort</h1>
-<div class="card-group ">
-  <div class="card text-white bg-secondary mb-3 shadow-lg rounded">
-    <img src="https://media.istockphoto.com/photos/rows-of-shelves-picture-id1138429558?k=6&m=1138429558&s=612x612&w=0&h=Vp_3KUoOalc0R1VYZwqbZK1g-hsiyg501J_RwJa6kA4=" class="card-img-top" width="350" height="280">
-    <div class="card-body">
-      <h5 class="card-title">Trockenlager</h5>
-      <p class="card-text"> text</p>
-      <p class="card-text"><small class="text-muted">Temperatur: 10°C</small></p>
+<div *ngIf="selectedIdLocation==0" class="container">
+  <h1>Lagerort</h1>
+  <hr>
+  <body class="card-group ">
+  <div class="card-group ">
+    <div class="card text-white bg-dark mb-3 shadow-lg rounded">
+      <img src="https://icon-library.com/images/add-2935429_960_720_695.png" class="card-img-top" alt="..."width="350" height="280">
+      <div class="card-body">
+        <h5 class="card-title">add storage location</h5>
+      </div>
     </div>
   </div>
-  <div class="card  text-white bg-secondary mb-3 shadow-lg rounded">
-    <img src="https://cms.delta-temp.com/ckfinder/userfiles/images/News/Preview/Vorschau-Grafik-Lebensmittel-Kuehlen.jpg" class="card-img-top" alt="..." width="350" height="280">
-    <div class="card-body">
-      <h5 class="card-title">Kühlhaus I</h5>
-      <p class="card-text">Lagerung von Frischeprodukten. Produkte mit einem kurzen MHD.</p>
-      <p class="card-text"><small class="text-muted">Temperatur: 2°C</small></p>
+  <div class="card-group {{i+1}}" *ngFor="let location of locations; let i=index; trackBy: trackByData">
+    <div class="card text-white bg-dark mb-3 shadow-lg rounded">
+      <img src= "{{location.picUrl}}" class="card-img-top" width="350" height="280">
+      <div class="card-body">
+        <h5 class="card-title">{{location.location}}</h5>
+        <p class="card-text">{{location.description}}</p>
+        <p> <i-bs
+                  name="pencil-square"
+                  class="text-secondary"
+                  width="2em"
+                  height="2em">
+        </i-bs>
+          <a><i-bs
+            name="trash"
+            class="text-secondary"
+            width="2em"
+            height="2em">
+          </i-bs></a></p>
+      </div>
     </div>
   </div>
-  <div class="card text-white bg-secondary mb-3 shadow-lg rounded">
-    <img src="https://cms.delta-temp.com/ckfinder/userfiles/images/News/Preview/Vorschau_Kuehlung-Pharma.jpg" class="card-img-top" alt="..." width="350" height="280">
-    <div class="card-body">
-      <h5 class="card-title">Kühlhaus II</h5>
-      <p class="card-text">Lagerung von Nicht-Frischeprodukten. Produkte mit einem längeren MHD.</p>
-      <p class="card-text"><small class="text-muted">Temperatur: 2°C</small></p>
-    </div>
-  </div>
+  </body>
 </div>
-<div class="card-group">
-  <div class="card  text-white bg-secondary mb-3 shadow-lg rounded">
-    <img src="https://www.viastore.com/systems/sites/systems/files/styles/16_9_lg/public/2020-04/2020-frozen-storage_warehouse-apply-label-outgoing-goods-viastore-americold-1.jpg?h=99e37000&itok=w3vjQarj" class="card-img-top"width="350" height="280">
-    <div class="card-body">
-      <h5 class="card-title">Tiefkühllager</h5>
-      <p class="card-text">Lagerung von allen Tiefkühlprodukten</p>
-      <p class="card-text"><small class="text-muted">Temperatur: -20°C</small></p>
-    </div>
-  </div>
-  <div class="card text-white bg-secondary mb-3 shadow-lg rounded">
-    <img src="https://media.istockphoto.com/photos/rows-of-shelves-picture-id1138429558?k=6&m=1138429558&s=612x612&w=0&h=Vp_3KUoOalc0R1VYZwqbZK1g-hsiyg501J_RwJa6kA4=" class="card-img-top" alt="..." width="350" height="280">
-    <div class="card-body">
-      <h5 class="card-title">Frischelager</h5>
-      <p class="card-text">Lagerung Obst & Gemüse</p>
-      <p class="card-text"><small class="text-muted">Temperatur: 5°C</small></p>
-    </div>
-  </div>
-  <div class="card  text-white bg-secondary mb-3 shadow-lg rounded">
-    <img src="https://media.istockphoto.com/photos/rows-of-shelves-picture-id1138429558?k=6&m=1138429558&s=612x612&w=0&h=Vp_3KUoOalc0R1VYZwqbZK1g-hsiyg501J_RwJa6kA4=" class="card-img-top" alt="..." width="350" height="280">
-    <div class="card-body">
-      <h5 class="card-title">Drogerielager & Non Food</h5>
-      <p class="card-text">Lagerung von Hygieneartikeln und Reinigungsmitteln</p>
-      <p class="card-text"><small class="text-muted">Temperatur: 25°C</small></p>
-    </div>
-  </div>
-</div>
-</body>
