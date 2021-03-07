@@ -116,4 +116,41 @@ Article.getAll= result => {
     });
 };
 
+// Artikel filtern nach Kategorien
+Article.getAllArticlesByCategoryId = (categoryId, result) => {
+    sql.query(`SELECT a.id,a.articleDescription,
+            a.producerName,a.unit,a.items,c.category,l.location,a.purchaseDate,a.expirationDate,
+            a.purchasingPrice_net
+            FROM articles a JOIN categories c ON a.category=c.id JOIN storagelocation l ON a.location=l.id
+            WHERE a.category = ${categoryId}`, (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(null, err);
+            return;
+        }
+
+        console.log("article: ", res);
+        result(null, res);
+    });
+};
+
+Article.getAllArticlesByLocationId = (locationId, result) => {
+    sql.query(`SELECT a.id,a.articleDescription,
+            a.producerName,a.unit,a.items,c.category,l.location,a.purchaseDate,a.expirationDate,
+            a.purchasingPrice_net
+            FROM articles a JOIN storagelocation l ON a.location=l.id JOIN categories c on a.category=c.id
+            WHERE a.location = ${locationId}`, (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(null, err);
+            return;
+        }
+
+        console.log("article: ", res);
+        result(null, res);
+    });
+};
+
+
+
 module.exports = Article;

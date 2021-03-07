@@ -150,5 +150,15 @@ export class BackendService {
       );
   }
 
+  //filtered articles by category and location id
+  //localhost:3000/articles/filteredCategory/:number
+  getAllArticlesByCategoryId(id:number):Observable<Article[]>{
+    return this.http.get<Article[]>(this.articleUrl +'s/filteredCategory/'+id);
+  }
+
+  //localhost:3000/articles/filteredLocation/:number
+  getAllArticlesByLocationId(id:number):Observable<Article[]>{
+    return this.http.get<Article[]>(this.articleUrl +'s/filteredLocation/'+id);
+  }
 
 }

@@ -114,3 +114,67 @@ exports.delete = (req, res) => {
         } else res.send({ message: `article was deleted successfully!` });
     });
 };
+
+exports.findAllArticlesByCategoryId = (req, res) => {
+    Article.getAllArticlesByCategoryId(req.params.categoryId, (err, data) => {
+        if (err) {
+            if (err.kind === "not_found") {
+                res.status(404).send({
+                    message: `Not found article with category-id ${req.params.categoryId}.`
+                });
+            } else {
+                res.status(500).send({
+                    message: "Error retrieving article with category-id " + req.params.categoryId
+                });
+            }
+        } else res.send(data);
+    });
+};
+
+exports.findAllArticlesByLocationId = (req, res) => {
+    Article.getAllArticlesByLocationId(req.params.locationId, (err, data) => {
+        if (err) {
+            if (err.kind === "not_found") {
+                res.status(404).send({
+                    message: `Not found article with category-id ${req.params.locationId}.`
+                });
+            } else {
+                res.status(500).send({
+                    message: "Error retrieving article with category-id " + req.params.locationId
+                });
+            }
+        } else res.send(data);
+    });
+};
+
+exports.findAllArticlesByCategoryId = (req, res) => {
+    Article.getAllArticlesByCategoryId(req.params.categoryId, (err, data) => {
+        if (err) {
+            if (err.kind === "not_found") {
+                res.status(404).send({
+                    message: `Not found article with category-id ${req.params.categoryId}.`
+                });
+            } else {
+                res.status(500).send({
+                    message: "Error retrieving article with category-id " + req.params.categoryId
+                });
+            }
+        } else res.send(data);
+    });
+};
+
+exports.findAllArticlesByLocationId = (req, res) => {
+    Article.getAllArticlesByLocationId(req.params.locationId, (err, data) => {
+        if (err) {
+            if (err.kind === "not_found") {
+                res.status(404).send({
+                    message: `Not found article with category-id ${req.params.locationId}.`
+                });
+            } else {
+                res.status(500).send({
+                    message: "Error retrieving article with category-id " + req.params.locationId
+                });
+            }
+        } else res.send(data);
+    });
+};
