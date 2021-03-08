@@ -11,6 +11,14 @@ import{  CommonModule} from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from "@angular/common/http";
+import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
+import { pencilSquare,trash } from 'ngx-bootstrap-icons';
+
+const icons = {
+  pencilSquare,
+  trash
+};
 
 @NgModule({
   declarations: [
@@ -27,7 +35,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     NgbModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgxBootstrapIconsModule.pick(icons)
   ],
   providers: [],
   bootstrap: [AppComponent]
