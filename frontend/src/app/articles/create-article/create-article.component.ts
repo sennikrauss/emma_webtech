@@ -68,7 +68,7 @@ export class CreateArticleComponent implements OnInit {
     this.cs.createArticle(this.article);
 
     //nachdem Artikel erstellt wurde, wohin navigieren?
-    this.router.navigate(['/sortiment']);
+    this.router.navigate(['/articles']);
   }
 
   cancel(): void {
