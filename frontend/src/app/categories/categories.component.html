@@ -1,36 +1,83 @@
-<div *ngIf="selectedCategoryId==0" class="container">
-  <h1>Kategorien</h1>
-  <hr>
-  <body class="card-group ">
-  <div class="card-group ">
-    <div class="card text-white bg-dark mb-3 shadow-lg rounded">
-      <img [routerLink]="['/category/new']" src=" https://icon-library.com/images/add-2935429_960_720_695.png" class="card-img-top" alt="..." width="350" height="280">
-      <div class="card-body">
-        <h5 class="card-title">add Category</h5>
+<body>
+  <div *ngIf="selectedCategoryId==0" class="container">
+    <h1>Kategorien</h1>
+    <hr>
+    <body class="card-group ">
+    <div class="card-group ">
+      <div class="card text-white bg-dark mb-3 shadow-lg rounded">
+        <img [routerLink]="['/category/new']" src=" https://icon-library.com/images/add-2935429_960_720_695.png" class="card-img-top" alt="..." width="350" height="280">
+        <div class="card-body">
+          <h5 class="card-title">add Category</h5>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="card-group {{i+1}}" *ngFor="let category of categories; let i=index; trackBy: trackByData">
-    <div class="card text-white bg-dark mb-3 shadow-lg rounded">
-      <a [routerLink]="['/category/',category.id]"></a>
-      <img [routerLink]="['/articles/filteredCategory/',category.id]" src= "{{category.picUrl}}" class="card-img-top" width="350" height="280">
-      <div class="card-body">
-        <h5 class="card-title">{{category.category}}</h5>
-        <p class="card-text">{{category.description}}</p>
-        <p><i-bs
-                 name="pencil-square"
-                 class="text-secondary"
-                 width="2em"
-                 height="2em">
-        </i-bs>
-          <i-bs
-            name="trash"
-            class="text-secondary"
-            width="2em"
-            height="2em">
-          </i-bs></p>
+    <div class="card-group {{i+1}}" *ngFor="let category of categories; let i=index; trackBy: trackByData">
+      <div class="card text-white bg-dark mb-3 shadow-lg rounded">
+        <a [routerLink]="['/category/',category.id]"></a>
+        <img [routerLink]="['/articles/filteredCategory/',category.id]" src= "{{category.picUrl}}" class="card-img-top" width="350" height="280">
+        <div class="card-body">
+          <h5 class="card-title">{{category.category}}</h5>
+          <p class="card-text">{{category.description}}</p>
+          <p><i-bs
+                   name="pencil-square"
+                   class="text-secondary"
+                   width="2em"
+                   height="2em">
+          </i-bs>
+            <i-bs
+              name="trash"
+              class="text-secondary"
+              width="2em"
+              height="2em"
+            (click)="open(content,category.id)">
+            </i-bs></p>
+        </div>
       </div>
     </div>
+    </body>
   </div>
-  </body>
-</div>
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Confirm delete</h4>
+      <form [formGroup]="form">
+        <div class="form-group">
+          <label for="inpId">id</label>
+          <div class="input-group">
+            <input id="inpId" class="form-control" formControlName="categoryIdControl" value="{{ category?.id }}" readonly>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inpKat">Kategorie</label>
+          <div class="input-group">
+            <input id="inpKat" class="form-control" formControlName="categoryControl" value="{{ category?.category }}" readonly>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inpDes">Beschreibung</label>
+          <div class="input-group">
+            <input id="inpDes" class="form-control" formControlName="descriptionControl" value="{{ category?.description }}" readonly>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inpUrl">Bild-Url</label>
+          <div class="input-group">
+            <textarea id="inpUrl" class="form-control" formControlName="urlControl" value="{{ category?.picUrl }}" readonly></textarea>
+          </div>
+        </div>
+
+      </form>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('cancel')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <h4 style="color: red">Do you really want to delete this data set?</h4>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modal.close('cancel')">Cancel</button>
+      <button type="button" class="btn btn-primary" (click)="modal.close('delete')">Delete</button>
+    </div>
+  </ng-template>
+</body>
