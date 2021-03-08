@@ -3,6 +3,8 @@ import {Article, Category, StorageLocation} from "../../shared/tables";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {BackendService} from "../../shared/backend.service";
+import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, NgbModalConfig} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-update-article',
@@ -18,6 +20,8 @@ export class UpdateArticleComponent implements OnInit {
   locations:StorageLocation[];
   @Output() updateEvent = new EventEmitter<Article>();
   form: FormGroup;
+  model: NgbDateStruct;
+
 
   constructor(private fb: FormBuilder, private router:Router,private cs:BackendService) {
     this.form = this.fb.group(
