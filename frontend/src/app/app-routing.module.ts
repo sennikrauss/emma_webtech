@@ -13,6 +13,20 @@ const routes: Routes = [
 {path: 'articles', component: ArticlesComponent },
 {path: 'about-tante-emma', component: AboutTanteEmmaComponent },
 
+  //path to readOne (Formulary: delete, update
+{path: 'category/:idCategory', component: CategoriesComponent },
+{path: 'location/:idLocation', component: LocationsComponent },
+{path: 'article/:idArticle', component: ArticlesComponent },
+
+  //path to createOne (Formulary: create
+{path: 'article/new', component: ArticlesComponent },
+{path: 'category/new', component: CategoriesComponent },
+{path: 'location/new', component: LocationsComponent },
+
+  //path to filtered article-table by only one category or location
+{path: 'articles/filteredCategory/:idCategory', component: ArticlesComponent },
+{path: 'articles/filteredLocation/:idLocation', component: ArticlesComponent },
+
 // otherwise redirect to home
 { path: '**', redirectTo: 'home' }
 ];
