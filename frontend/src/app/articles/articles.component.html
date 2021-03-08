@@ -1,8 +1,7 @@
 <body class="table-scrollable">
-<h1> Sortiment </h1>
 <hr>
 <div *ngIf="selectedCategoryId==0 || selectedCategoryId!=0 || selectedLocationId!=0" class="container">
-  <button type="button" class="btn btn-success" [routerLink]="['/article/new']">add new Article</button>
+  <button type="button" class="btn btn-success" [routerLink]="['/createArticle']">add new Article</button>
   <table class="table table-condensed table-hover">
     <caption>List of Articles</caption>
     <thead>
@@ -36,7 +35,8 @@
         name="trash"
         class="text-secondary"
         width="1em"
-        height="1em">
+        height="1em"
+      (click)="open(content,article.id)">
       </i-bs></td>
 
       <td>{{ i+1 }}</td>
@@ -53,3 +53,86 @@
     </tbody>
   </table>
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Confirm delete</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('cancel')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <h4 style="color: red">Do you really want to delete this data set?</h4>
+    <form [formGroup]="form">
+      <div class="form-group">
+        <label for="inpId">id</label>
+        <div class="input-group">
+          <input id="inpId" class="form-control" formControlName="idControl" value="{{ article?.id }}" readonly>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inpAB">artikelbezeichnung</label>
+        <div class="input-group">
+          <input id="inpAB" class="form-control" formControlName="articleDescriptionControl" value="{{ article?.articleDescription }}" readonly>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inpHN">herstellername</label>
+        <div class="input-group">
+          <input id="inpHN" class="form-control" formControlName="producerNameControl" value="{{ article?.producerName }}" readonly>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inpEin">einheit</label>
+        <div class="input-group">
+          <input id="inpEin" class="form-control" formControlName="unitControl" value="{{ article?.unit }}" readonly>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inpStueck">stueckzahl</label>
+        <div class="input-group">
+          <input id="inpStueck" class="form-control" formControlName="itemsControl" value="{{ article?.items }}" readonly>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inpKate">kategorie</label>
+        <div class="input-group">
+          <input id="inpKate" class="form-control" formControlName="categoryControl" value="{{ article?.category }}" readonly>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inpLagerort">lagerort</label>
+        <div class="input-group">
+          <input id="inpLagerort" class="form-control" formControlName="locationControl" value="{{ article?.location }}" readonly>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inpKaufdatum">kaufdatum</label>
+        <div class="input-group">
+          <input id="inpKaufdatum" class="form-control" formControlName="purchaseDateControl" value="{{ article?.purchaseDate }}" readonly>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inpVerfallsdatum">Verfallsdatum</label>
+        <div class="input-group">
+          <input id="inpVerfallsdatum" class="form-control" formControlName="expirationDateControl" value="{{ article?.expirationDate }}" readonly>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inpPreis">netto_einkaufspreis</label>
+        <div class="input-group">
+          <input id="inpPreis" class="form-control" formControlName="purchasingPrice_netControl" value="{{ article?.purchasingPrice_net }}" readonly>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.close('cancel')">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="modal.close('delete')">Delete</button>
+  </div>
+</ng-template>
+</body>

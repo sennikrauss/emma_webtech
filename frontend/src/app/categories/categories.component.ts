@@ -47,7 +47,7 @@ export class CategoriesComponent implements OnInit {
     if (this.selectedCategoryId === 0) { //localhost:4200/category
       this.readAll();
       console.log('selectedCategoryId: '+this.selectedCategoryId)
-    } else {
+    } else if(this.selectedCategoryId>0) {
       console.log('category = ' + this.selectedCategoryId);
       this.readOne(this.selectedCategoryId);
     }
@@ -86,6 +86,7 @@ export class CategoriesComponent implements OnInit {
   }
 
 
+  //for delete form
   open(content, id:number): void {
     this.readOne(id);
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {

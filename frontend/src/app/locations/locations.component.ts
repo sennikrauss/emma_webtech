@@ -48,7 +48,7 @@ export class LocationsComponent implements OnInit {
     console.log('selectedLocation: '+this.selectedIdLocation)
     if (this.selectedIdLocation === 0) {
       this.readAll();
-    } else {
+    } else if(this.selectedIdLocation>0){
       console.log('idLocation = ' + this.selectedIdLocation);
       this.readOne(this.selectedIdLocation);
     }

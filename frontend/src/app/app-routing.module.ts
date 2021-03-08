@@ -5,6 +5,9 @@ import { LocationsComponent } from './locations/locations.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { AboutTanteEmmaComponent } from './about-tante-emma/about-tante-emma.component';
 import { ArticlesComponent } from './articles/articles.component';
+import {CreateArticleComponent} from "./articles/create-article/create-article.component";
+import {CreateCategoryComponent} from "./categories/create-category/create-category.component";
+import {CreateLocationComponent} from "./locations/create-location/create-location.component";
 
 const routes: Routes = [
 {path: 'locations', component:  LocationsComponent },
@@ -19,9 +22,9 @@ const routes: Routes = [
 {path: 'article/:idArticle', component: ArticlesComponent },
 
   //path to createOne (Formulary: create
-{path: 'article/new', component: ArticlesComponent },
-{path: 'category/new', component: CategoriesComponent },
-{path: 'location/new', component: LocationsComponent },
+{path: 'createArticle', component: CreateArticleComponent },
+{path: 'createCategory', component: CreateCategoryComponent },
+{path: 'createLocation', component: CreateLocationComponent },
 
   //path to filtered article-table by only one category or location
 {path: 'articles/filteredCategory/:idCategory', component: ArticlesComponent },
