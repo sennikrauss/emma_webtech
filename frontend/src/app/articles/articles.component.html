@@ -1,6 +1,6 @@
 <body class="table-scrollable">
 <hr>
-<div *ngIf="selectedCategoryId==0 || selectedCategoryId!=0 || selectedLocationId!=0" class="container">
+<div *ngIf="selectedArticleId==0 || selectedCategoryId!=0 || selectedLocationId!=0" class="container">
   <button type="button" class="btn btn-success" [routerLink]="['/createArticle']">add new Article</button>
   <table class="table table-condensed table-hover">
     <caption>List of Articles</caption>
@@ -23,7 +23,7 @@
     <tbody>
     <tr *ngFor="let article of articles; let i=index; trackBy: trackByData">
       <td><a>
-        <i-bs
+        <i-bs [routerLink]="['/article/',article.id]"
           name="pencil-square"
           class="text-secondary"
           width="1em"
@@ -52,6 +52,17 @@
     </tr>
     </tbody>
   </table>
+</div>
+
+<!-- UPDATE Form Article-->
+<div *ngIf="selectedArticleId>0" class="container">
+  <div *ngIf="error">
+    <p>{{error?.message}}</p>
+    <p>{{error?.status}}</p>
+  </div>
+  <div *ngIf="article">
+    <app-update-article [article]="article" (updateEvent)="update($event)"></app-update-article>
+  </div>
 </div>
 
 <ng-template #content let-modal>

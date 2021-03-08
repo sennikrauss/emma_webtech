@@ -51,16 +51,14 @@ export class ArticlesComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedArticleId = Number(this.route.snapshot.paramMap.get('idArticle'));
-    console.log('selectedArticleId: '+this.selectedArticleId)
     if (this.selectedArticleId === 0) {
       this.readAll();
-    } else {
+    } else if(this.selectedArticleId>0) {
       this.readOne(this.selectedArticleId);
     }
 
     //wenn Klick auf Kategorienkarte, dann Link zur Sortimentstabelle, dann Kategorie-id>0, dann Filter anwenden
     this.selectedCategoryId = Number(this.route.snapshot.paramMap.get('idCategory'));
-    console.log('selectedCategoryId: '+this.selectedCategoryId)
 
     if(this.selectedCategoryId!=0){
       this.readAllArticlesByCategory(this.selectedCategoryId);
@@ -68,7 +66,6 @@ export class ArticlesComponent implements OnInit {
 
     //wenn Klick auf Lagerortkarte, dann Link zur Sortimentstabelle, dann Lagerort-id>0, dann Filter anwenden
     this.selectedLocationId=Number(this.route.snapshot.paramMap.get('idLocation'));
-    console.log('selectedLocationId: '+this.selectedLocationId)
 
     if(this.selectedLocationId!=0){
       this.readAllLocationsByCategory(this.selectedLocationId);
@@ -118,7 +115,7 @@ export class ArticlesComponent implements OnInit {
   update(article:Article):void{
     this.article=article;
     this.cs.updateArticle(this.article.id,this.article);
-    this.router.navigateByUrl('/categories');
+    this.router.navigateByUrl('/articles');
   }
 
   deleteOne(id: number): void {

@@ -70,7 +70,7 @@ export class BackendService {
   }
 
   updateLocation(id:number,location:StorageLocation):void{
-    this.http.put<StorageLocation>(this.articleUrl +'/'+id,location).subscribe(
+    this.http.put<StorageLocation>(this.locationUrl +'/'+id,location).subscribe(
       response=>{
         console.log(response);
         console.log(response.id);

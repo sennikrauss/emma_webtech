@@ -13,12 +13,11 @@
     </div>
     <div class="card-group {{i+1}}" *ngFor="let category of categories; let i=index; trackBy: trackByData">
       <div class="card text-white bg-dark mb-3 shadow-lg rounded">
-        <a [routerLink]="['/category/',category.id]"></a>
         <img [routerLink]="['/articles/filteredCategory/',category.id]" src= "{{category.picUrl}}" class="card-img-top" width="350" height="280">
         <div class="card-body">
           <h5 class="card-title">{{category.category}}</h5>
           <p class="card-text">{{category.description}}</p>
-          <p><i-bs
+          <p><i-bs [routerLink]="['/category/',category.id]"
                    name="pencil-square"
                    class="text-secondary"
                    width="2em"
@@ -35,6 +34,17 @@
       </div>
     </div>
     </body>
+  </div>
+
+  <!--UPDATE CATEGORY -->
+  <div *ngIf="selectedCategoryId>0" class="container">
+    <div *ngIf="error">
+      <p>{{error?.message}}</p>
+      <p>{{error?.status}}</p>
+    </div>
+    <div *ngIf="category">
+      <app-update-category [category] ="category" (updateEvent)="update($event)"></app-update-category>
+    </div>
   </div>
 
   <ng-template #content let-modal>

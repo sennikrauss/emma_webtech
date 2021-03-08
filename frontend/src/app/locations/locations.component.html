@@ -37,6 +37,17 @@
     </body>
   </div>
 
+  <div *ngIf="selectedIdLocation>0" class="container">
+    <div *ngIf="error">
+      <p>{{error?.message}}</p>
+      <p>{{error?.status}}</p>
+    </div>
+    <div *ngIf="location">
+      <app-update-location [storageLocation]="location"  (updateEvent)="update($event)"></app-update-location>
+    </div>
+  </div>
+
+
   <ng-template #content let-modal>
     <div class="modal-header">
       <h4 class="modal-title" id="modal-basic-title">Confirm delete</h4>
