@@ -98,7 +98,7 @@ export class ArticlesComponent implements OnInit {
   readAllArticlesByCategory(id:number): void {
     this.cs.getAllArticlesByCategoryId(id).subscribe(
       (response: Article[]) => {
-        console.log(response);
+        console.log('Test:',response);
         return this.articles = response;
       },
       error => console.log(error)

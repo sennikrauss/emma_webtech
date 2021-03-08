@@ -4,7 +4,7 @@
   <body class="card-group ">
   <div class="card-group ">
     <div class="card text-white bg-dark mb-3 shadow-lg rounded">
-      <img src=" https://icon-library.com/images/add-2935429_960_720_695.png" class="card-img-top" alt="..." width="350" height="280">
+      <img [routerLink]="['/category/new']" src=" https://icon-library.com/images/add-2935429_960_720_695.png" class="card-img-top" alt="..." width="350" height="280">
       <div class="card-body">
         <h5 class="card-title">add Category</h5>
       </div>
@@ -12,7 +12,8 @@
   </div>
   <div class="card-group {{i+1}}" *ngFor="let category of categories; let i=index; trackBy: trackByData">
     <div class="card text-white bg-dark mb-3 shadow-lg rounded">
-      <img src= "{{category.picUrl}}" class="card-img-top" width="350" height="280">
+      <a [routerLink]="['/category/',category.id]"></a>
+      <img [routerLink]="['/articles/filteredCategory/',category.id]" src= "{{category.picUrl}}" class="card-img-top" width="350" height="280">
       <div class="card-body">
         <h5 class="card-title">{{category.category}}</h5>
         <p class="card-text">{{category.description}}</p>

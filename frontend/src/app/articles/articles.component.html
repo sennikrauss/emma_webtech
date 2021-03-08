@@ -2,7 +2,7 @@
 <h1> Sortiment </h1>
 <hr>
 <div *ngIf="selectedCategoryId==0 || selectedCategoryId!=0 || selectedLocationId!=0" class="container">
-  <button type="button" class="btn btn-success" [routerLink]="['/article/create']">add new Article</button>
+  <button type="button" class="btn btn-success" [routerLink]="['/article/new']">add new Article</button>
   <table class="table table-condensed table-hover">
     <caption>List of Articles</caption>
     <thead>
