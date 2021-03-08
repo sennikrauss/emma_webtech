@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
 showNavigationArrows = false;
 showNavigationIndicators = false;
-images = [674,425,1080].map((n) => `https://picsum.photos/id/${n}/900/500`);
+images = [674,1080,425].map((n) => `https://picsum.photos/id/${n}/900/500`);
 public inputValue : string;
 
   constructor(config: NgbCarouselConfig,) {
