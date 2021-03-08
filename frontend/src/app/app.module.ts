@@ -14,6 +14,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
 import { pencilSquare,trash } from 'ngx-bootstrap-icons';
+import { UpdateArticleComponent } from './articles/update-article/update-article.component';
+import { CreateArticleComponent } from './articles/create-article/create-article.component';
+import { UpdateLocationComponent } from './locations/update-location/update-location.component';
+import { CreateLocationComponent } from './locations/create-location/create-location.component';
+import { UpdateCategoryComponent } from './categories/update-category/update-category.component';
+import { CreateCategoryComponent } from './categories/create-category/create-category.component';
 
 const icons = {
   pencilSquare,
@@ -27,7 +33,13 @@ const icons = {
     LocationsComponent,
     CategoriesComponent,
     ArticlesComponent,
-    AboutTanteEmmaComponent
+    AboutTanteEmmaComponent,
+    UpdateArticleComponent,
+    CreateArticleComponent,
+    UpdateLocationComponent,
+    CreateLocationComponent,
+    UpdateCategoryComponent,
+    CreateCategoryComponent
   ],
   imports: [
     BrowserModule,
