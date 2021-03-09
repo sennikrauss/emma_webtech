@@ -24,3 +24,12 @@ export interface StorageLocation{
   description:string;
   picUrl:string;
 }
+
+export interface ArticleCombi{
+  id_article:number;
+  articleDescription:string;
+  id_category:number;
+  categoryName:string;
+  id_location:number;
+  locationName:string;
+}

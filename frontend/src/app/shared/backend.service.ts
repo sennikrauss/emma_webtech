@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Article, Category, StorageLocation} from "./tables";
+import {Article, ArticleCombi, Category, StorageLocation} from "./tables";
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +32,10 @@ export class BackendService {
   //get by id
   getArticleById(dataId:number):Observable<Article>{
     return this.http.get<Article>(this.articleUrl+'/'+dataId);
+  }
+
+  getArticleCombiById(dataId:number):Observable<ArticleCombi>{
+    return this.http.get<ArticleCombi>(this.baseUrl+'findCombi/'+dataId);
   }
 
   getCategoryById(dataId:number):Observable<Category>{

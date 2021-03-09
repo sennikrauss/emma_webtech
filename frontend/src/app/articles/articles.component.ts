@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Article} from "../shared/tables";
+import {Article, ArticleCombi, Category, StorageLocation} from "../shared/tables";
 import {HttpErrorResponse} from "@angular/common/http";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {BackendService} from "../shared/backend.service";
@@ -19,6 +19,7 @@ export class ArticlesComponent implements OnInit {
   error: HttpErrorResponse;
   closeResult='';
   form=FormGroup;
+  articleCombi:ArticleCombi;
 
   constructor(
     private cs:BackendService,
@@ -51,6 +52,7 @@ export class ArticlesComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedArticleId = Number(this.route.snapshot.paramMap.get('idArticle'));
+    //console.log(this.article.category)
     if (this.selectedArticleId === 0) {
       this.readAll();
     } else if(this.selectedArticleId>0) {
@@ -111,6 +113,27 @@ export class ArticlesComponent implements OnInit {
       error => console.log(error)
     );
   }
+/**
+  readCategory(id:number): void {
+    this.cs.getCategoryById(id).subscribe(
+      (response: Category) => {
+        console.log(response);
+        return this.categoryOfSelectedArticle = response;
+      },
+      error => console.log(error)
+    );
+  }
+
+  readLocation(id:number): void {
+    this.cs.getLocationById(id).subscribe(
+      (response: StorageLocation) => {
+        console.log(response);
+        return this.locationOfSelectedArticle = response;
+      },
+      error => console.log(error)
+    );
+  }**/
+
 
   update(article:Article):void{
     this.article=article;
@@ -124,15 +147,25 @@ export class ArticlesComponent implements OnInit {
   }
 
   open(content, id: number): void {
+    this.getCombi(id);
     this.readOne(id);
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
-      console.log(this.closeResult);
       if (result === 'delete')
       {
         this.deleteOne(this.article?.id);
       }
     });
+  }
+
+  getCombi(id:number):void{
+    this.cs.getArticleCombiById(id).subscribe(
+      (response: ArticleCombi) => {
+        console.log(response);
+        return this.articleCombi = response;
+      },
+      error => console.log(error)
+    );
   }
 
 }

@@ -1,10 +1,9 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {Article, Category, StorageLocation} from "../../shared/tables";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ActivatedRoute, Router} from "@angular/router";
+import {Router} from "@angular/router";
 import {BackendService} from "../../shared/backend.service";
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
-import {NgbModal, NgbModalConfig} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-update-article',
@@ -56,8 +55,6 @@ export class UpdateArticleComponent implements OnInit {
       expirationDateControl:this.article?.expirationDate,
       purchasingPrice_netControl:this.article?.purchasingPrice_net
     });
-
-    console.log('Artikel: ',this.article)
   }
 
   onSubmit(): void {

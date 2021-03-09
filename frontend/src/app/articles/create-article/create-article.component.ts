@@ -4,7 +4,6 @@ import {Article, Category, StorageLocation} from "../../shared/tables";
 import {BackendService} from "../../shared/backend.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
-import {NgbModal, NgbModalConfig} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-create-article',

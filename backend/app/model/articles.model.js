@@ -49,6 +49,27 @@ Article.findById = (artikelId, result) => {
     });
 };
 
+//damit man bei dem zu löschenden Artikel die Kategorie und Lagerort als string erkennt und nicht number
+Article.findCombiById = (artikelId, result) => {
+    sql.query(`SELECT a.id as id_article,a.articleDescription,c.id as id_category,c.category as categoryName,l.id as id_location,l.location as locationName FROM articles a
+ JOIN categories c ON a.category=c.id JOIN storagelocation l ON a.location=l.id WHERE a.id = ${artikelId}`, (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+            return;
+        }
+
+        if (res.length) {
+            console.log("found article: ", res[0]);
+            result(null, res[0]);
+            return;
+        }
+
+        // not found Article with the id
+        result({ kind: "not_found" }, null);
+    });
+};
+
 Article.updateById = (id, article, result) => {
     sql.query(
         "UPDATE articles SET articleDescription = ?,producerName = ?, unit = ?, items = ?, category=?, location = ?, purchaseDate = ?, expirationDate = ?, purchasingPrice_net = ? WHERE id = ?",

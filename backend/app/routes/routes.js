@@ -23,6 +23,9 @@ module.exports = app => {
     app.get("/category/:categoryId", category.findOne);
     app.get("/location/:locationId", location.findOne);
 
+    //GET one
+    app.get("/findCombi/:articleId", article.findCombi);
+
     // Update with id
     app.put("/article/:articleId", article.update);
     app.put("/category/:categoryId", category.update);

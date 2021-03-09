@@ -70,6 +70,22 @@ exports.findOne = (req, res) => {
     });
 };
 
+exports.findCombi = (req, res) => {
+    Article.findCombiById(req.params.articleId, (err, data) => {
+        if (err) {
+            if (err.kind === "not_found") {
+                res.status(404).send({
+                    message: `Not found article with id ${req.params.articleId}.`
+                });
+            } else {
+                res.status(500).send({
+                    message: "Error retrieving article with id " + req.params.articleId
+                });
+            }
+        } else res.send(data);
+    });
+};
+
 // Update an Article identified by the id in the request
 exports.update = (req, res) => {
     // Validate Request

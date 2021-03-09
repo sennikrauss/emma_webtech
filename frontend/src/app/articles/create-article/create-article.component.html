@@ -64,38 +64,20 @@
       </div>
     </div>
 
+    <!--CODE KLAPPT NUR IN GOOGLE CHROME, DORT ÖFFNET SICH DANN EIN KALENDER-->
     <div class="form-group row">
-      <label for="inpKaufdatum" class="col-sm-2 col-form-label">Kaufdatum</label>
-      <form class="form-inline">
+      <label for="inputEinkaufsdatum" class="col-sm-2 col-form-label">Kaufdatum</label>
       <div class="col-sm-10">
-        <div class="form-group">
-        <div class="input-group">
-            <input class="form-control" placeholder="yyyy-mm-dd"
-                   name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" id="inpKaufdatum" >
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
-            </div>
-          </div>
-        </div>
-        </div>
-      </form>
+        <input type="date" class="form-control" formControlName="purchaseDateControl" id="inputEinkaufsdatum">
+      </div>
     </div>
 
+    <!--CODE KLAPPT NUR IN GOOGLE CHROME, DORT ÖFFNET SICH DANN EIN KALENDER -->
     <div class="form-group row">
-      <label for="inpKaufdatum" class="col-sm-2 col-form-label">Kaufdatum</label>
-      <form class="form-inline">
-        <div class="col-sm-10">
-          <div class="form-group">
-            <div class="input-group">
-              <input class="form-control" placeholder="yyyy-mm-dd"
-                     name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" id="inpKaufdatum" >
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
+      <label for="inputVerfallsdatum" class="col-sm-2 col-form-label">Verfallsdatum</label>
+      <div class="col-sm-10">
+        <input type="date" class="form-control" formControlName="expirationDateControl" id="inputVerfallsdatum">
+      </div>
     </div>
 
 
