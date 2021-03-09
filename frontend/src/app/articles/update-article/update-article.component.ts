@@ -4,6 +4,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {BackendService} from "../../shared/backend.service";
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-update-article',

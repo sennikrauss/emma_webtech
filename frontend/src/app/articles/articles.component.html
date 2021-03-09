@@ -46,8 +46,8 @@
       <td>{{article.items}}</td>
       <td>{{article.category}}</td>
       <td>{{article.location}}</td>
-      <td>{{article.purchaseDate}}</td>
-      <td>{{article.expirationDate}}</td>
+      <td>{{article.purchaseDate | date: 'longDate'}}</td>
+      <td>{{article.expirationDate | date: 'longDate'}}</td>
       <td>{{article.purchasingPrice_net}}</td>
     </tr>
     </tbody>
