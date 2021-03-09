@@ -118,7 +118,7 @@
       <div class="form-group">
         <label for="inpKaufdatum">Kaufdatum</label>
         <div class="input-group">
-          <input id="inpKaufdatum" class="form-control" formControlName="purchaseDateControl" value="{{ article?.purchaseDate }}" readonly>
+          <input id="inpKaufdatum" class="form-control" formControlName="purchaseDateControl" value="{{ article?.purchaseDate |date: 'longDate' }}" readonly>
         </div>
       </div>
 
@@ -132,7 +132,7 @@
       <div class="form-group">
         <label for="inpVerfallsdatum">Verfallsdatum</label>
         <div class="input-group">
-          <input id="inpVerfallsdatum" class="form-control" formControlName="expirationDateControl" value="{{ article?.expirationDate }}" readonly>
+          <input id="inpVerfallsdatum" class="form-control" formControlName="expirationDateControl" value="{{ article?.expirationDate | date: 'longDate' }}" readonly>
         </div>
       </div>
 

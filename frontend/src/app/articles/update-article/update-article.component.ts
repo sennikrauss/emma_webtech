@@ -9,7 +9,7 @@ import {DatePipe} from "@angular/common";
 @Component({
   selector: 'app-update-article',
   templateUrl: './update-article.component.html',
-  styleUrls: ['./update-article.component.css']
+  styleUrls: ['./update-article.component.css'],
 })
 export class UpdateArticleComponent implements OnInit {
 
