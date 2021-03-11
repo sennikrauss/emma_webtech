@@ -67,13 +67,10 @@
 
 <ng-template #content let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Confirm delete</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('cancel')">
-      <span aria-hidden="true">&times;</span>
-    </button>
+    <h4 style="color: red"> <b>Do you really want to delete this data set?</b></h4>
+
   </div>
   <div class="modal-body">
-    <h4 style="color: red">Do you really want to delete this data set?</h4>
     <form [formGroup]="form">
       <div class="form-group">
         <label for="inpId">id</label>
