@@ -47,8 +47,13 @@
     </div>
   </div>
 
+  <!--delete category-->
   <ng-template #content let-modal>
-    <h4 style="color: red">Do you really want to delete this data set?</h4>
+    <h4 style="color: red">Do you really want to delete this data set?
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('cancel')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </h4>
     <div class="modal-header">
       <form [formGroup]="form">
         <div class="form-group">
@@ -76,13 +81,10 @@
             <textarea id="inpUrl" class="form-control" formControlName="urlControl" value="{{ category?.picUrl }}" readonly></textarea>
           </div>
         </div>
-
       </form>
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('cancel')">
-        <span aria-hidden="true">&times;</span>
-      </button>
+
     </div>
-   <div class="modal-footer">
+   <div class=" form -group" id="cancel2">
       <button type="button" class="btn btn-secondary" (click)="modal.close('cancel')">Cancel</button>
       <button type="button" class="btn btn-primary" (click)="modal.close('delete')">Delete</button>
     </div>
