@@ -35,7 +35,7 @@ const routes: Routes = [
 {path: 'articles/filteredLocation/:idLocation', component: ArticlesComponent },
 
 // otherwise redirect to home
-{ path: '**', redirectTo: 'home' }
+{ path: '**', redirectTo: 'login' }
 ];
 
 @NgModule({
