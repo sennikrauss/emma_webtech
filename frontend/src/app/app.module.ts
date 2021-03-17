@@ -2,30 +2,33 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { LocationsComponent } from './locations/locations.component';
-import { CategoriesComponent } from './categories/categories.component';
-import { ArticlesComponent } from './articles/articles.component';
-import { AboutTanteEmmaComponent } from './about-tante-emma/about-tante-emma.component';
+import { HomeComponent } from './user/home/home.component';
+import { LocationsComponent } from './user/locations/locations.component';
+import { CategoriesComponent } from './user/categories/categories.component';
+import { ArticlesComponent } from './user/articles/articles.component';
+import { AboutTanteEmmaComponent } from './user/about-tante-emma/about-tante-emma.component';
 import{  CommonModule} from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
-import { pencilSquare,trash } from 'ngx-bootstrap-icons';
-import { UpdateArticleComponent } from './articles/update-article/update-article.component';
-import { CreateArticleComponent } from './articles/create-article/create-article.component';
-import { UpdateLocationComponent } from './locations/update-location/update-location.component';
-import { CreateLocationComponent } from './locations/create-location/create-location.component';
-import { UpdateCategoryComponent } from './categories/update-category/update-category.component';
-import { CreateCategoryComponent } from './categories/create-category/create-category.component';
+import { pencilSquare,trash,key } from 'ngx-bootstrap-icons';
+import { UpdateArticleComponent } from './user/articles/update-article/update-article.component';
+import { CreateArticleComponent } from './user/articles/create-article/create-article.component';
+import { UpdateLocationComponent } from './user/locations/update-location/update-location.component';
+import { CreateLocationComponent } from './user/locations/create-location/create-location.component';
+import { UpdateCategoryComponent } from './user/categories/update-category/update-category.component';
+import { CreateCategoryComponent } from './user/categories/create-category/create-category.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { UserComponent } from './user/user.component';
+import { HeaderComponent } from './user/header/header.component';
 
 const icons = {
   pencilSquare,
-  trash
+  trash,
+  key
 };
 
 @NgModule({
@@ -43,7 +46,9 @@ const icons = {
     UpdateCategoryComponent,
     CreateCategoryComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +60,7 @@ const icons = {
     HttpClientModule,
     NgxBootstrapIconsModule.pick(icons)
   ],
-  providers: [],
+  providers: [LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

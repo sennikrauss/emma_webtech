@@ -1,8 +1,8 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import {Article, Category, StorageLocation} from "../../shared/tables";
+import {Article, Category, StorageLocation} from "../../../shared/tables";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
-import {BackendService} from "../../shared/backend.service";
+import {BackendService} from "../../../shared/backend.service";
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {DatePipe} from "@angular/common";
 

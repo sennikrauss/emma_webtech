@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { ApiService } from './../services/api.service';
-import { AuthService } from './../services/auth.service';
+import { ApiService } from '../services/api.service';
+import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
           this.auth.setDataInLocalStorage('userData', JSON.stringify(res.data));
           this.auth.setDataInLocalStorage('token', res.token);
           this.router.navigate(['home']);
+          console.log('isLogin: ',this.isLogin)
         } else {
         }
       }, err => {
@@ -59,6 +60,8 @@ export class LoginComponent implements OnInit {
     logout(): void{
       this.auth.clearStorage();
       this.router.navigate(['']);
+      //zurück zum login formular
+      location.reload();
     }
 
      register(): void{ this.router.navigate(['register']);}

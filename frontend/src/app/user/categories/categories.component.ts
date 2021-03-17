@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Category} from "../shared/tables";
+import {Category} from "../../shared/tables";
 import {ActivatedRoute, Router} from "@angular/router";
-import {BackendService} from "../shared/backend.service";
+import {BackendService} from "../../shared/backend.service";
 import {NgbModal, NgbModalConfig} from "@ng-bootstrap/ng-bootstrap";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {HttpErrorResponse} from "@angular/common/http";
