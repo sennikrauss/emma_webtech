@@ -21,8 +21,9 @@
     </form>
   </div>
   <div class = 'col-md-4 offset-4 mt-5' *ngIf = 'this.isLogin'>
-    <h1>You are logged in</h1>
-    <button class = 'btn btn-outline-info' (click) = 'logout()'>Log-out</button>
+    <h1>log-out?</h1>
+    <button class = 'btn btn-outline-info' (click) = 'logout()'>yes, Log-out</button>
+    <button class = 'btn btn-outline-info' [routerLink]="['/user/home']">no, go back</button>
   </div>
 </div>
 </body>
