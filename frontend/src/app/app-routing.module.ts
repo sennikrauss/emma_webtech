@@ -8,6 +8,8 @@ import { ArticlesComponent } from './articles/articles.component';
 import {CreateArticleComponent} from "./articles/create-article/create-article.component";
 import {CreateCategoryComponent} from "./categories/create-category/create-category.component";
 import {CreateLocationComponent} from "./locations/create-location/create-location.component";
+import {LoginComponent} from './login/login.component';
+import {RegisterComponent} from './register/register.component';
 
 const routes: Routes = [
 {path: 'locations', component:  LocationsComponent },
@@ -15,6 +17,8 @@ const routes: Routes = [
 {path: 'categories', component: CategoriesComponent },
 {path: 'articles', component: ArticlesComponent },
 {path: 'about-tante-emma', component: AboutTanteEmmaComponent },
+ {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
 
   //path to readOne (Formulary: delete, update
 {path: 'category/:idCategory', component: CategoriesComponent },

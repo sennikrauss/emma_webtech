@@ -20,6 +20,8 @@ import { UpdateLocationComponent } from './locations/update-location/update-loca
 import { CreateLocationComponent } from './locations/create-location/create-location.component';
 import { UpdateCategoryComponent } from './categories/update-category/update-category.component';
 import { CreateCategoryComponent } from './categories/create-category/create-category.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const icons = {
   pencilSquare,
@@ -39,7 +41,9 @@ const icons = {
     UpdateLocationComponent,
     CreateLocationComponent,
     UpdateCategoryComponent,
-    CreateCategoryComponent
+    CreateCategoryComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
