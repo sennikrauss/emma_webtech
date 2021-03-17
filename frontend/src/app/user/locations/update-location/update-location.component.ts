@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import {StorageLocation} from "../../shared/tables";
+import {StorageLocation} from "../../../shared/tables";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 
@@ -44,7 +44,7 @@ export class UpdateLocationComponent implements OnInit {
   }
 
   cancel(): void {
-    this.router.navigateByUrl('/locations');
+    this.router.navigateByUrl('/user/locations');
   }
 
 }

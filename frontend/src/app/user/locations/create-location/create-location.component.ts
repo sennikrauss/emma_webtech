@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {StorageLocation} from "../../shared/tables";
-import {BackendService} from "../../shared/backend.service";
+import {StorageLocation} from "../../../shared/tables";
+import {BackendService} from "../../../shared/backend.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
@@ -42,11 +42,11 @@ export class CreateLocationComponent implements OnInit {
 
     console.log(this.location);
     this.cs.createLocation(this.location);
-    this.router.navigate(['/locations']);
+    this.router.navigate(['/user/locations']);
   }
 
   cancel(): void {
-    this.router.navigate(['/locations']);
+    this.router.navigate(['/user/locations']);
   }
 
 }

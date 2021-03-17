@@ -1,7 +1,7 @@
 <body class="table-scrollable">
 
 <div *ngIf="selectedArticleId==0 || selectedCategoryId!=0 || selectedLocationId!=0" class="container">
-  <button type="button" class="btn btn-success" [routerLink]="['/createArticle']">add new Article</button>
+  <button type="button" class="btn btn-success" [routerLink]="['/user/createArticle']">add new Article</button>
   <table class="table table-condensed table-hover">
     <caption>List of Articles</caption>
     <thead>
@@ -23,7 +23,7 @@
     <tbody>
     <tr *ngFor="let article of articles; let i=index; trackBy: trackByData">
       <td><a>
-        <i-bs [routerLink]="['/article/',article.id]"
+        <i-bs [routerLink]="['/user/article/',article.id]"
           name="pencil-square"
           class="text-secondary"
           width="1em"

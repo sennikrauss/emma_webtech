@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
           console.log(res);
           this.auth.setDataInLocalStorage('userData', JSON.stringify(res.data));
           this.auth.setDataInLocalStorage('token', res.token);
-          this.router.navigate(['home']);
+          this.router.navigate(['user/home']);
         } else {
         }
       }, err => {
@@ -59,6 +59,7 @@ export class LoginComponent implements OnInit {
     logout(): void{
       this.auth.clearStorage();
       this.router.navigate(['']);
+      location.reload()
     }
 
      register(): void{ this.router.navigate(['register']);}

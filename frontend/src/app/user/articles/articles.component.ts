@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Article, ArticleCombi, Category, StorageLocation} from "../shared/tables";
+import {Article, ArticleCombi, Category, StorageLocation} from "../../shared/tables";
 import {HttpErrorResponse} from "@angular/common/http";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {BackendService} from "../shared/backend.service";
+import {BackendService} from "../../shared/backend.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {NgbModal, NgbModalConfig} from "@ng-bootstrap/ng-bootstrap";
 
@@ -83,6 +83,7 @@ export class ArticlesComponent implements OnInit {
       (response: Article[]) => {
         console.log(response);
         return this.articles = response;
+        location.reload()
       },
       error => console.log(error)
     );
@@ -97,7 +98,7 @@ export class ArticlesComponent implements OnInit {
   readAllArticlesByCategory(id:number): void {
     this.cs.getAllArticlesByCategoryId(id).subscribe(
       (response: Article[]) => {
-        console.log('Test:',response);
+        console.log(response);
         return this.articles = response;
       },
       error => console.log(error)
@@ -138,7 +139,7 @@ export class ArticlesComponent implements OnInit {
   update(article:Article):void{
     this.article=article;
     this.cs.updateArticle(this.article.id,this.article);
-    this.router.navigateByUrl('/articles');
+    this.router.navigateByUrl('/user/articles');
   }
 
   deleteOne(id: number): void {

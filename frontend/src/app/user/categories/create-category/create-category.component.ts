@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Category} from "../../shared/tables";
-import {BackendService} from "../../shared/backend.service";
+import {Category} from "../../../shared/tables";
+import {BackendService} from "../../../shared/backend.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
@@ -42,10 +42,10 @@ export class CreateCategoryComponent implements OnInit {
 
     console.log(this.category);
     this.cs.createCategory(this.category);
-    this.router.navigate(['/categories']);
+    this.router.navigate(['/user/categories']);
   }
 
   cancel(): void {
-    this.router.navigate(['/categories']);
+    this.router.navigate(['/user/categories']);
   }
 }

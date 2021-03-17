@@ -5,7 +5,7 @@
     <body class="card-group ">
     <div class="card-group ">
       <div class="card text-white bg-dark mb-3 shadow-lg rounded">
-        <img [routerLink]="['/createLocation']" src="https://icon-library.com/images/add-2935429_960_720_695.png" class="card-img-top" alt="..."width="350" height="280">
+        <img [routerLink]="['/user/createLocation']" src="https://icon-library.com/images/add-2935429_960_720_695.png" class="card-img-top" alt="..."width="350" height="280">
         <div class="card-body">
           <h5 class="card-title">add storage location</h5>
         </div>
@@ -13,12 +13,12 @@
     </div>
     <div class="card-group {{i+1}}" *ngFor="let location of locations; let i=index; trackBy: trackByData">
       <div class="card text-white bg-dark mb-3 shadow-lg rounded">
-        <img [routerLink]="['/articles/filteredLocation/',location.id]" src= "{{location.picUrl}}" class="card-img-top" width="350" height="280">
+        <img [routerLink]="['/user/articles/filteredLocation/',location.id]" src= "{{location.picUrl}}" class="card-img-top" width="350" height="280">
         <div class="card-body">
           <h5 class="card-title">{{location.location}}</h5>
           <p class="card-text">{{location.description}}</p>
           <p> <i-bs
-            [routerLink]="['/location/',location.id]"
+            [routerLink]="['/user/location/',location.id]"
             name="pencil-square"
             class="text-secondary"
             width="2em"

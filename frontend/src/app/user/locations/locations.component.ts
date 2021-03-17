@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {StorageLocation} from "../shared/tables";
+import {StorageLocation} from "../../shared/tables";
 import {HttpErrorResponse} from "@angular/common/http";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {BackendService} from "../shared/backend.service";
+import {BackendService} from "../../shared/backend.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {NgbModal, NgbModalConfig} from "@ng-bootstrap/ng-bootstrap";
 
@@ -45,11 +45,9 @@ export class LocationsComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedIdLocation=Number(this.route.snapshot.paramMap.get('idLocation'))
-    console.log('selectedLocation: '+this.selectedIdLocation)
     if (this.selectedIdLocation === 0) {
       this.readAll();
     } else if(this.selectedIdLocation>0){
-      console.log('idLocation = ' + this.selectedIdLocation);
       this.readOne(this.selectedIdLocation);
     }
   }
@@ -79,7 +77,7 @@ export class LocationsComponent implements OnInit {
     this.location=location;
     this.cs.updateLocation(this.location.id,this.location);
     //zurück zur Location-Hauptseite springen
-    this.router.navigateByUrl('/locations');
+    this.router.navigateByUrl('/user/locations');
   }
 
   deleteOne(id:number): void {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Article, Category, StorageLocation} from "../../shared/tables";
-import {BackendService} from "../../shared/backend.service";
+import {Article, Category, StorageLocation} from "../../../shared/tables";
+import {BackendService} from "../../../shared/backend.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
@@ -70,12 +70,12 @@ export class CreateArticleComponent implements OnInit {
     this.cs.createArticle(this.article);
 
     //nachdem Artikel erstellt wurde, wohin navigieren?
-    this.router.navigate(['/articles']);
+    this.router.navigate(['/user/articles']);
   }
 
   cancel(): void {
     //nachdem auf Cancel geklickt wurde, wohin navigieren?
-    this.router.navigate(['/articles']);
+    this.router.navigate(['/user/articles']);
   }
 
   readAllCategories(): void {
