@@ -1,0 +1,24 @@
+body{ background-image:url('https://image.gala.de/22381302/t/85/v4/w1440/r1.5/-/gesund-zunehmen-lebensmittel.jpg');
+ background-size:cover;
+ background-repeat: no-repeat;
+  width:100%; height:100vh;
+}
+.form-container{
+ border: 1px solid;
+ padding: 50px  60px;
+ -webkt-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+ box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+ margin-top: 5vh;
+
+ }
+ h4{ font-family: 'pacifico', cursive; font-size: 2.0rem;
+     margin-bottom: 30px;
+
+ }
+ p{color:#a39392;
+  font-family:arial, "lucida console", sans-serif; /* Schriftart */
+ }
+#linie{ border: 2px solid #faf9f9;}
+
+#loginbutton{  margin-bottom: 30px;}
