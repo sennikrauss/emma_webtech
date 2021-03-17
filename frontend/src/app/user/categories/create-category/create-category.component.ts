@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Category} from "../../shared/tables";
-import {BackendService} from "../../shared/backend.service";
+import {Category} from "../../../shared/tables";
+import {BackendService} from "../../../shared/backend.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({

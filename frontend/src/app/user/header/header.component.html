@@ -1,0 +1,50 @@
+<div>
+  <div class=" panel panel-primary">
+    <div class="panel-body">
+
+    </div>
+  </div>
+
+  <nav class=" navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/startseite">Tante Emma</a>
+      <button class="navbar-toggler" type="button" (click)="toggleNavbar()" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngClass]="{'show': navbarOpen}">
+        <ul class="navbar-nav ml-auto m-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/startseite">startseite</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/locations">Lagerort</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/categories">Kategorien</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/sortiment">Sortiment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Über uns</a>
+          </li>
+          <li class="nav-item">
+            <a  class="nav-link" (click)="onLogout()" ><i-bs
+              name="key"
+              class="text-danger"
+              width="2em"
+              height="2em"
+              (click)="onLogout()">
+            </i-bs> Logout</a>
+
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto m-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Mein Account</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
