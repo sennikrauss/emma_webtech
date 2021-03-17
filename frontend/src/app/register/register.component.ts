@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from './../services/api.service';
-import { AuthService } from './../services/auth.service';
+import { ApiService } from '../services/api.service';
+import { AuthService } from '../services/auth.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit {
          console.log(res);
          this.auth.setDataInLocalStorage('userData', JSON.stringify(res.data));
          this.auth.setDataInLocalStorage('token', res.token);
-         this.router.navigate(['login']);
+         this.router.navigate(['user/home']);
        } else {
          console.log(res);
          alert(res.msg);
