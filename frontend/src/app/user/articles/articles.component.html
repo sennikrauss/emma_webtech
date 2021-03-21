@@ -46,8 +46,8 @@
       <td>{{article.items}}</td>
       <td>{{article.category}}</td>
       <td>{{article.location}}</td>
-      <td>{{article.purchaseDate | date: 'longDate'}}</td>
-      <td>{{article.expirationDate | date: 'longDate'}}</td>
+      <td>{{article.purchaseDate | date: 'dd.MM.yyyy'}}</td>
+      <td>{{article.expirationDate | date: 'dd.MM.yyyy'}}</td>
       <td>{{article.purchasingPrice_net}}</td>
     </tr>
     </tbody>
@@ -115,7 +115,7 @@
       <div class="form-group">
         <label for="inpKaufdatum">Kaufdatum</label>
         <div class="input-group">
-          <input id="inpKaufdatum" class="form-control" formControlName="purchaseDateControl" value="{{ article?.purchaseDate |date: 'longDate' }}" readonly>
+          <input id="inpKaufdatum" class="form-control" formControlName="purchaseDateControl" value="{{ article?.purchaseDate |date: 'dd.MM.yyyy' }}" readonly>
         </div>
       </div>
 
@@ -129,7 +129,7 @@
       <div class="form-group">
         <label for="inpVerfallsdatum">Verfallsdatum</label>
         <div class="input-group">
-          <input id="inpVerfallsdatum" class="form-control" formControlName="expirationDateControl" value="{{ article?.expirationDate | date: 'longDate' }}" readonly>
+          <input id="inpVerfallsdatum" class="form-control" formControlName="expirationDateControl" value="{{ article?.expirationDate | date: 'dd.MM.yyyy' }}" readonly>
         </div>
       </div>
 

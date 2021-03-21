@@ -31,12 +31,12 @@ export class CreateArticleComponent implements OnInit {
         articleDescriptionControl: ['', Validators.required],
         producerNameControl: ['', Validators.required],
         unitControl: ['', Validators.required],
-        itemsControl: ['', Validators.required],
+        itemsControl: ['', [Validators.required, Validators.pattern("\\d*")]],
         categoryControl: ['', Validators.required],
         locationControl: ['', Validators.required],
         purchaseDateControl: ['', Validators.required],
         expirationDateControl: ['', Validators.required],
-        purchasingPrice_netControl: ['', Validators.required],
+        purchasingPrice_netControl: ['', [Validators.required,Validators.pattern("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)")]],
       }
     );
     this.article = {

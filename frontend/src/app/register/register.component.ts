@@ -27,15 +27,14 @@ export class RegisterComponent implements OnInit {
 
    ngOnInit(): void {
      this.registerForm = this.formBuilder.group({
-       username: ['', Validators.required],
-       email: ['', Validators.required],
-       password: ['', Validators.required]
+       username: ['', [Validators.required,Validators.minLength(6)]],
+       email: ['', [Validators.required, Validators.email]],
+       password: ['', [Validators.required,Validators.minLength(6)]]
      });
      this.isUserLogin();
    }
 
    onSubmit(): void {
-     this.submitted = true;
      console.log('Your form data : ', this.registerForm.value);
      this.api.postTypeRequest('user/register', this.registerForm.value).subscribe((res: any) => {
        if (res.status) {
@@ -46,6 +45,7 @@ export class RegisterComponent implements OnInit {
        } else {
          console.log(res);
          alert(res.msg);
+         console.log('error')
        }
      }, err => {
        this.errorMessage = err.error.message;

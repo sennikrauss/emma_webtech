@@ -47,6 +47,9 @@
       <label for="inputStueck" class="col-sm-2 col-form-label">Stueckzahl</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" formControlName="itemsControl" id="inputStueck">
+        <div *ngIf="form.get('itemsControl').touched && form.get('itemsControl').errors" style="color: red">
+          input must be a number.
+        </div>
       </div>
     </div>
 
@@ -85,6 +88,9 @@
       <label for="inputEP" class="col-sm-2 col-form-label">Einkaufspreis [netto]</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" formControlName="purchasingPrice_netControl" id="inputEP">
+        <div *ngIf="form.get('purchasingPrice_netControl').touched && form.get('purchasingPrice_netControl').errors" style="color: red">
+          Input must be a number.
+        </div>
       </div>
     </div>
 
