@@ -31,11 +31,11 @@ export class UpdateArticleComponent implements OnInit {
         producerNameControl: ['', Validators.required],
         unitControl: ['', Validators.required],
         categoryControl: ['', Validators.required],
-        itemsControl: ['', Validators.required],
+        itemsControl: ['', [Validators.required, Validators.pattern("\\d*")]],
         locationControl: ['', Validators.required],
         purchaseDateControl: ['', Validators.required],
         expirationDateControl: ['', Validators.required],
-        purchasingPrice_netControl: ['', Validators.required],
+        purchasingPrice_netControl: ['', [Validators.required,Validators.pattern("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)")]],
       }
     );
   }
@@ -71,6 +71,7 @@ export class UpdateArticleComponent implements OnInit {
     this.article.purchaseDate=values.purchaseDateControl;
     this.article.expirationDate=values.expirationDateControl;
     this.article.purchasingPrice_net=values.purchasingPrice_netControl;
+
     console.log(this.article);
     this.updateEvent.emit(this.article);
   }

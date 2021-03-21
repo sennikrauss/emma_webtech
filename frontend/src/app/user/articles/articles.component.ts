@@ -155,6 +155,8 @@ export class ArticlesComponent implements OnInit {
       if (result === 'delete')
       {
         this.deleteOne(this.article?.id);
+      }else {
+        location.reload()
       }
     });
   }
