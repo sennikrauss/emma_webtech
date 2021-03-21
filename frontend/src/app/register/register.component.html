@@ -5,25 +5,25 @@
       <h4>Register</h4>
       <div class = 'form-group'>
         <input class = 'form-control' type = "text" formControlName="username" name = "username" placeholder = "Username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-        <div *ngIf="registerForm.get('username').touched && registerForm.get('username').errors" style="color: red; background-color: white">
+        <div class="alert alert-danger" *ngIf="registerForm.get('username').touched && registerForm.get('username').errors">
           Username must be at least 6 characters.
         </div>
       </div>
       <div class = 'form-group'>
         <input class = 'form-control' type = "email" formControlName="email" name = "email" placeholder = "Email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-        <div *ngIf="registerForm.get('email').touched && registerForm.get('email').errors" style="background-color: white; color: red">
-          @ is missing in email.
+        <div class="alert alert-danger" *ngIf="registerForm.get('email').touched && registerForm.get('email').errors">
+          "@" is missing in email.
         </div>
       </div>
       <div class = 'form-group'>
         <input class = 'form-control' type = "password" formControlName="password" name = "password" placeholder = "Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-        <div *ngIf="registerForm.get('password').touched && registerForm.get('password').errors" style="color: red; background-color: white">
+        <div class="alert alert-danger" *ngIf="registerForm.get('password').touched && registerForm.get('password').errors">
           Password must be at least 6 characters.
         </div>
       </div>
       <input class= 'btn btn-info btn-block' type = "submit" value = "Register" [disabled]="!registerForm.valid">
       <hr id="linie">
-      <a href="/login"> <b>go back </b></a>
+      <a class="btn btn-info btn-block" [routerLink]="['/login']"> <b>go back</b></a>
     </form>
   </div>
   <div class = 'col-md-4 offset-4 mt-5' *ngIf = 'this.isLogin'>

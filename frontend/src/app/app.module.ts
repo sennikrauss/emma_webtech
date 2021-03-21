@@ -13,7 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
-import { pencilSquare,trash,key } from 'ngx-bootstrap-icons';
+import { pencilSquare,trash,boxArrowRight } from 'ngx-bootstrap-icons';
 import { UpdateArticleComponent } from './user/articles/update-article/update-article.component';
 import { CreateArticleComponent } from './user/articles/create-article/create-article.component';
 import { UpdateLocationComponent } from './user/locations/update-location/update-location.component';
@@ -28,7 +28,7 @@ import { HeaderComponent } from './user/header/header.component';
 const icons = {
   pencilSquare,
   trash,
-  key
+  boxArrowRight
 };
 
 @NgModule({
