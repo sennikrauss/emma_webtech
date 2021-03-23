@@ -11,16 +11,16 @@
     <div class="collapse navbar-collapse " id="navbarSupportedContent" [ngClass]="{'show': navbarOpen}">
       <ul class="navbar-nav ml-auto mb-2 mb-lg-0" >
         <li class="nav-item" >
-          <a class="nav-link"  aria-current="page" href="/user/home">Startseite</a>
+          <a class="nav-link"  aria-current="page" [routerLink]="['/user/home']">Startseite</a>
         </li>
         <li class="nav-item" >
-          <a class="nav-link" aria-current="page" href="/user/locations">Lagerort</a>
+          <a class="nav-link" aria-current="page" [routerLink]="['/user/locations']">Lagerort</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/user/categories">Kategorien</a>
+          <a class="nav-link" [routerLink]="['/user/categories']">Kategorien</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/user/articles">Sortiment</a>
+          <a class="nav-link" [routerLink]="['/user/articles']">Sortiment</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
@@ -33,7 +33,7 @@
           </i-bs></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/user/about-tante-emma">Über uns</a>
+          <a class="nav-link" [routerLink]="['/user/about-tante-emma']">Über uns</a>
         </li>
       </ul>
     </div>
