@@ -19,7 +19,7 @@ a:hover{ color:white;}
 }
 .navbar-nav .nav-link.active
 {
-  border-top: 2px solid #bdbdbd;
+  border-top: 3px solid #bdbdbd;
   color: #bdbdbd;
 }
 
