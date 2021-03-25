@@ -47,46 +47,44 @@
     </div>
   </div>
 
-
+  <!--delete-->
   <ng-template #content let-modal>
-    <h4 style="color: red">Do you really want to delete this data set?
+    <div class="modal-header">
+      <h4 style="color: red">Do you really want to delete this data set?</h4>
+
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('cancel')">
         <span aria-hidden="true">&times;</span>
       </button>
-    </h4>
-    <div class="modal-header">
+    </div>
+    <div class="modal-body">
       <form [formGroup]="form">
         <div class="form-group">
           <label for="inpId">id</label>
           <div class="input-group">
-            <input id="inpId" class="form-control" formControlName="locationIdControl" value="{{ location?.id }}" readonly>
+            <input id="inpId" class="form-control" formControlName="idControl" value="{{ member?.id }}" readonly>
           </div>
         </div>
         <div class="form-group">
-          <label for="inpOrt">Lagerort</label>
+          <label for="inpFN">firstname</label>
           <div class="input-group">
-            <input id="inpOrt" class="form-control" formControlName="locationControl" value="{{ location?.location }}" readonly>
+            <input id="inpFN" class="form-control" formControlName="firstNameControl" value="{{ member?.firstname }}" readonly>
           </div>
         </div>
         <div class="form-group">
-          <label for="inpDes">Beschreibung</label>
+          <label for="inpLN">lastname</label>
           <div class="input-group">
-            <input id="inpDes" class="form-control" formControlName="descriptionControl" value="{{ location?.description }}" readonly>
+            <input id="inpLN" class="form-control" formControlName="lastNameControl" value="{{ member?.lastname }}" readonly>
           </div>
         </div>
-
         <div class="form-group">
-          <label for="inpUrl">Bild-Url</label>
+          <label for="inpEmail">email</label>
           <div class="input-group">
-            <textarea id="inpUrl" class="form-control" formControlName="urlControl" value="{{ location?.picUrl }}" alt="bildUrl?" readonly></textarea>
+            <input id="inpEmail" class="form-control" formControlName="emailControl" value="{{ member?.email }}" readonly>
           </div>
         </div>
-
       </form>
-
     </div>
-
-    <div class="form-group" id="cancel">
+    <div class="modal-footer">
       <button type="button" class="btn btn-secondary" (click)="modal.close('cancel')">Cancel</button>
       <button type="button" class="btn btn-primary" (click)="modal.close('delete')">Delete</button>
     </div>
