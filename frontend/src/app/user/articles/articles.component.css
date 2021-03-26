@@ -73,9 +73,13 @@ th{
   background-color: rgba(0, 0, 0, .3);
 }
 
-h1{ color:black;
+/*h1{ color:black;
   text-align:center;
   margin-top:6px;
-}
+}**/
 
-/**body{ background-color: #f6f1e6;}*/
+
+.modal-header{
+  background:#4f4f4d;
+}
+.modal-body ,.modal-footer{ background:#eae9e7;}
