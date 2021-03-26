@@ -48,47 +48,6 @@
   </div>
 
   <!--delete category-->
-  <!--<ng-template #content let-modal>
-    <h4 style="color: red">Do you really want to delete this data set?
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('cancel')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </h4>
-    <div class="modal-header">
-      <form [formGroup]="form">
-        <div class="form-group">
-          <label for="inpId">id</label>
-          <div class="input-group">
-            <input id="inpId" class="form-control" formControlName="categoryIdControl" value="{{ category?.id }}" readonly>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inpKat">Kategorie</label>
-          <div class="input-group">
-            <input id="inpKat" class="form-control" formControlName="categoryControl" value="{{ category?.category }}" readonly>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inpDes">Beschreibung</label>
-          <div class="input-group">
-            <input id="inpDes" class="form-control" formControlName="descriptionControl" value="{{ category?.description }}" readonly>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="inpUrl">Bild-Url</label>
-          <div class="input-group">
-            <textarea id="inpUrl" class="form-control" formControlName="urlControl" value="{{ category?.picUrl }}" readonly></textarea>
-          </div>
-        </div>
-      </form>
-
-    </div>
-   <div class=" form -group" id="cancel2">
-      <button type="button" class="btn btn-secondary" (click)="modal.close('cancel')">Cancel</button>
-      <button type="button" class="btn btn-primary" (click)="modal.close('delete')">Delete</button>
-    </div>
-  </ng-template>-->
   <ng-template #content let-modal>
     <div class="modal-header">
       <h4 style="color: red">Do you want to delete this category?</h4>
@@ -100,27 +59,21 @@
     <div class="modal-body">
       <form [formGroup]="form">
         <div class="form-group">
-          <label for="inpId">id</label>
+          <label for="inpCategory">Kategorie</label>
           <div class="input-group">
-            <input id="inpId" class="form-control" formControlName="idControl" value="{{ category?.id }}" readonly>
+            <input id="inpCategory" class="form-control" formControlName="categoryControl" value="{{ category?.category }}" readonly>
           </div>
         </div>
         <div class="form-group">
-          <label for="inpFN">Kategorie</label>
+          <label for="inpDesc">Beschreibung</label>
           <div class="input-group">
-            <input id="inpFN" class="form-control" formControlName="firstNameControl" value="{{ category?.category }}" readonly>
+            <input id="inpDesc" class="form-control" formControlName="descriptionControl" value="{{ category?.description }}" readonly>
           </div>
         </div>
         <div class="form-group">
-          <label for="inpLN">Beschreibung</label>
+          <label for="inpUrl">Bild-URL</label>
           <div class="input-group">
-            <input id="inpLN" class="form-control" formControlName="lastNameControl" value="{{ category?.description }}" readonly>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inpEmail">Bild-URL</label>
-          <div class="input-group">
-            <textarea id="inpEmail" class="form-control" formControlName="emailControl" value="{{ category?.picUrl }}" readonly></textarea>
+            <textarea id="inpUrl" class="form-control" formControlName="urlControl" value="{{ category?.picUrl }}" readonly></textarea>
           </div>
         </div>
       </form>

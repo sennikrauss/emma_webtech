@@ -67,46 +67,40 @@
 
 <ng-template #content let-modal>
   <div class="modal-header">
-    <h4 style="color: red"> <b>Do you really want to delete this data set?</b></h4>
+    <h4 style="color: red"> <b>Do you want to delete this article?</b></h4>
 
   </div>
   <div class="modal-body">
     <form [formGroup]="form">
       <div class="form-group">
-        <label for="inpId">id</label>
-        <div class="input-group">
-          <input id="inpId" class="form-control" formControlName="idControl" value="{{ article?.id }}" readonly>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="inpAB">artikelbezeichnung</label>
+        <label for="inpAB">Artikelbezeichnung</label>
         <div class="input-group">
           <input id="inpAB" class="form-control" formControlName="articleDescriptionControl" value="{{ article?.articleDescription }}" readonly>
         </div>
       </div>
       <div class="form-group">
-        <label for="inpHN">herstellername</label>
+        <label for="inpHN">Herstellername</label>
         <div class="input-group">
           <input id="inpHN" class="form-control" formControlName="producerNameControl" value="{{ article?.producerName }}" readonly>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="inpEin">einheit</label>
+        <label for="inpEin">Einheit</label>
         <div class="input-group">
           <input id="inpEin" class="form-control" formControlName="unitControl" value="{{ article?.unit }}" readonly>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="inpStueck">stueckzahl</label>
+        <label for="inpStueck">Stueckzahl</label>
         <div class="input-group">
           <input id="inpStueck" class="form-control" formControlName="itemsControl" value="{{ article?.items }}" readonly>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="inpKate">kategorie</label>
+        <label for="inpKate">Kategorie</label>
         <div class="input-group">
           <input id="inpKate" class="form-control" formControlName="categoryControl" value="{{ articleCombi?.categoryName }}" readonly>
         </div>
@@ -120,7 +114,7 @@
       </div>
 
       <div class="form-group">
-        <label for="inpLagerort">lagerort</label>
+        <label for="inpLagerort">Lagerort</label>
         <div class="input-group">
           <input id="inpLagerort" class="form-control" formControlName="locationControl" value="{{ articleCombi?.locationName }}" readonly>
         </div>
@@ -134,7 +128,7 @@
       </div>
 
       <div class="form-group">
-        <label for="inpPreis">netto_einkaufspreis</label>
+        <label for="inpPreis">Netto_Einkaufspreis</label>
         <div class="input-group">
           <input id="inpPreis" class="form-control" formControlName="purchasingPrice_netControl" value="{{ article?.purchasingPrice_net }}" readonly>
         </div>

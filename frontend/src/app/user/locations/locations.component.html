@@ -50,7 +50,7 @@
   <!--delete-->
   <ng-template #content let-modal>
     <div class="modal-header">
-      <h4 style="color: red">Do you really want to delete this data set?</h4>
+      <h4 style="color: red">Do you want to delete this storage location?</h4>
 
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('cancel')">
         <span aria-hidden="true">&times;</span>
@@ -59,27 +59,21 @@
     <div class="modal-body">
       <form [formGroup]="form">
         <div class="form-group">
-          <label for="inpId">id</label>
+          <label for="inpOrt">Lagerort</label>
           <div class="input-group">
-            <input id="inpId" class="form-control" formControlName="idControl" value="{{ member?.id }}" readonly>
+            <input id="inpOrt" class="form-control" formControlName="locationControl" value="{{ location?.location }}" readonly>
           </div>
         </div>
         <div class="form-group">
-          <label for="inpFN">firstname</label>
+          <label for="inpDesc">Beschreibung</label>
           <div class="input-group">
-            <input id="inpFN" class="form-control" formControlName="firstNameControl" value="{{ member?.firstname }}" readonly>
+            <input id="inpDesc" class="form-control" formControlName="descriptionControl" value="{{ location?.description }}" readonly>
           </div>
         </div>
         <div class="form-group">
-          <label for="inpLN">lastname</label>
+          <label for="inpUrl">Bild-Url</label>
           <div class="input-group">
-            <input id="inpLN" class="form-control" formControlName="lastNameControl" value="{{ member?.lastname }}" readonly>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inpEmail">email</label>
-          <div class="input-group">
-            <input id="inpEmail" class="form-control" formControlName="emailControl" value="{{ member?.email }}" readonly>
+            <textarea id="inpUrl" class="form-control" formControlName="urlControl" value="{{ location?.picUrl }}" readonly></textarea>
           </div>
         </div>
       </form>
