@@ -1,3 +1,10 @@
-#inputoben{
-  margin-top:6px;
+.modal-header{
+  background:#f6f1e6;
+}
+.modal-body ,.modal-footer{
+  background:#f6f1e6;
+}
+
+body{
+  background-color: #f6f1e6;
 }

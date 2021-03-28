@@ -1,6 +1,11 @@
-input{   margin-top:6px;
+.modal-header{
+  background:#f6f1e6;
+}
+.modal-body ,.modal-footer{
+  background:#f6f1e6;
 }
 
-form{
-  margin-top: 6px;
+body{
+  background-color: #f6f1e6;
 }
+

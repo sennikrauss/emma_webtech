@@ -1,89 +1,99 @@
-<div class="container">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-
-    <div class="form-group row">
-      <label for="inputAB" class="col-sm-2 col-form-label">Artikelbezeichnung</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" formControlName="articleDescriptionControl" id="inputAB">
+<body>
+  <div class="container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="modal-header">
+        <h4>Update article here ...</h4>
       </div>
-    </div>
+      <div class="modal-body">
+          <div class="form-group row">
+            <label for="inputAB" class="col-sm-2 col-form-label">Artikelbezeichnung</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="articleDescriptionControl" id="inputAB">
+            </div>
+          </div>
 
-    <div class="form-group row">
-      <label for="inputHN" class="col-sm-2 col-form-label">Herstellername</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" formControlName="producerNameControl" id="inputHN">
+          <div class="form-group row">
+            <label for="inputHN" class="col-sm-2 col-form-label">Herstellername</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="producerNameControl" id="inputHN">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputEin" class="col-sm-2 col-form-label">Einheit</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="unitControl" id="inputEin">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputStueck" class="col-sm-2 col-form-label">Stueckzahl</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="itemsControl" id="inputStueck">
+              <div *ngIf="form.get('itemsControl').touched && form.get('itemsControl').errors" style="color: red">
+                Input must be a number.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputKategorie" class="col-sm-2 col-form-label">Kategorie</label>
+            <div class="col-sm-10">
+              <select formControlName="categoryControl" class="form-control" id="inputKategorie">
+                <option disabled>choose category</option>
+                <option *ngFor="let category of categories" value="{{category.id}}"> {{category.category}} </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputLagerort" class="col-sm-2 col-form-label">Lagerort</label>
+            <div class="col-sm-10">
+              <select formControlName="locationControl" class="form-control" id="inputLagerort">
+                <option disabled>choose storage location</option>
+                <option *ngFor="let location of locations" value="{{location.id}}">{{location.location}} </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputKaufdatum" class="col-sm-2 col-form-label">Kaufdatum</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="purchaseDateControl" id="inputKaufdatum">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputVerfallsdatum" class="col-sm-2 col-form-label">Verfallsdatum</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="expirationDateControl" id="inputVerfallsdatum">
+            </div>
+          </div>
+
+
+          <div class="form-group row">
+            <label for="inputEP" class="col-sm-2 col-form-label">Einkaufspreis [netto]</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="purchasingPrice_netControl" id="inputEP">
+              <div *ngIf="form.get('purchasingPrice_netControl').touched && form.get('purchasingPrice_netControl').errors" style="color: red">
+                Input must be a number.
+              </div>
+            </div>
+          </div>
+
+
+
       </div>
-    </div>
-
-    <div class="form-group row">
-      <label for="inputEin" class="col-sm-2 col-form-label">Einheit</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" formControlName="unitControl" id="inputEin">
-      </div>
-    </div>
-
-    <div class="form-group row">
-      <label for="inputStueck" class="col-sm-2 col-form-label">Stueckzahl</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" formControlName="itemsControl" id="inputStueck">
-        <div *ngIf="form.get('itemsControl').touched && form.get('itemsControl').errors" style="color: red">
-          Input must be a number.
+      <div class="modal-footer">
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <button type="submit" class="btn btn-primary btn-block" [disabled]="!form.valid">Update</button>
+          </div>
+          <div class="col-sm-6">
+            <button type="cancel" class="btn btn-secondary btn-block"(click)="cancel()">Cancel</button>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="form-group row">
-      <label for="inputKategorie" class="col-sm-2 col-form-label">Kategorie</label>
-      <div class="col-sm-10">
-        <select formControlName="categoryControl" class="form-control" id="inputKategorie">
-          <option disabled>choose category</option>
-          <option *ngFor="let category of categories" value="{{category.id}}"> {{category.category}} </option>
-        </select>
-      </div>
-    </div>
-
-    <div class="form-group row">
-      <label for="inputLagerort" class="col-sm-2 col-form-label">Lagerort</label>
-      <div class="col-sm-10">
-        <select formControlName="locationControl" class="form-control" id="inputLagerort">
-          <option disabled>choose storage location</option>
-          <option *ngFor="let location of locations" value="{{location.id}}">{{location.location}} </option>
-        </select>
-      </div>
-    </div>
-
-    <div class="form-group row">
-      <label for="inputKaufdatum" class="col-sm-2 col-form-label">Kaufdatum</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" formControlName="purchaseDateControl" id="inputKaufdatum">
-      </div>
-    </div>
-
-    <div class="form-group row">
-      <label for="inputVerfallsdatum" class="col-sm-2 col-form-label">Verfallsdatum</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" formControlName="expirationDateControl" id="inputVerfallsdatum">
-      </div>
-    </div>
-
-
-    <div class="form-group row">
-      <label for="inputEP" class="col-sm-2 col-form-label">Einkaufspreis [netto]</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" formControlName="purchasingPrice_netControl" id="inputEP">
-        <div *ngIf="form.get('purchasingPrice_netControl').touched && form.get('purchasingPrice_netControl').errors" style="color: red">
-          Input must be a number.
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group row">
-      <div class="col-sm-6">
-        <button type="submit" class="btn btn-primary btn-block" [disabled]="!form.valid">Update</button>
-      </div>
-      <div class="col-sm-6">
-        <button type="cancel" class="btn btn-secondary btn-block"(click)="cancel()">Cancel</button>
-      </div>
-    </div>
-  </form>
-</div>
+    </form>
+  </div>
+</body>

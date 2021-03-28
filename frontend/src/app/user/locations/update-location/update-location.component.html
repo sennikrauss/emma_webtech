@@ -1,34 +1,42 @@
+<body>
 <div class="container">
+
   <form [formGroup]="formLocation" (ngSubmit)="onSubmit()">
+    <div class="modal-header">
+      <h4>Update location here ...</h4>
+    </div>
+    <div class="modal-body">
+      <div class="form-group row">
+        <label for="inputLocation" class="col-sm-2 col-form-label">Lagerort</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" formControlName="locationControl" id="inputLocation">
+        </div>
+      </div>
 
-    <div class="form-group row">
-      <label for="inputLocation" class="col-sm-2 col-form-label">Lagerort</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" formControlName="locationControl" id="inputLocation">
+      <div class="form-group row">
+        <label for="inputDescription" class="col-sm-2 col-form-label">Beschreibung</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" formControlName="descriptionControl" id="inputDescription">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputUrl" class="col-sm-2 col-form-label">Bild-url</label>
+        <div class="col-sm-10">
+          <textarea rows="4" type="text" class="form-control" formControlName="urlControl" id="inputUrl"></textarea>
+        </div>
       </div>
     </div>
-
-    <div class="form-group row">
-      <label for="inputDescription" class="col-sm-2 col-form-label">Beschreibung</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" formControlName="descriptionControl" id="inputDescription">
-      </div>
-    </div>
-
-    <div class="form-group row">
-      <label for="inputUrl" class="col-sm-2 col-form-label">Bild-url</label>
-      <div class="col-sm-10">
-        <textarea type="text" class="form-control" formControlName="urlControl" id="inputUrl"></textarea>
-      </div>
-    </div>
-
-    <div class="form-group row">
-      <div class="col-sm-6">
-        <button type="submit" class="btn btn-primary btn-block" [disabled]="!formLocation.valid">Update</button>
-      </div>
-      <div class="col-sm-6">
-        <button type="cancel" class="btn btn-secondary btn-block"(click)="cancel()">Cancel</button>
+    <div class="modal-footer">
+      <div class="form-group row">
+        <div class="col-sm-6">
+          <button type="submit" class="btn btn-primary btn-block" [disabled]="!formLocation.valid">Update</button>
+        </div>
+        <div class="col-sm-6">
+          <button type="cancel" class="btn btn-secondary btn-block"(click)="cancel()">Cancel</button>
+        </div>
       </div>
     </div>
   </form>
 </div>
+</body>

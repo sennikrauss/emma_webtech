@@ -16,10 +16,6 @@ div button{
   overflow-x: auto;
 }
 
-th{
-  background-color: #f6f1e6;
-}
-
 .table-scrollable::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 14px;
@@ -34,7 +30,6 @@ th{
 
 h1{ color:black;
   text-align:center;
-  margin-top:6px;
 }
 
 
@@ -58,7 +53,7 @@ div button{
 }
 
 th{
-  background-color: #f6f1e6;
+  background-color: lightgrey;
 }
 
 .table-scrollable::-webkit-scrollbar {
