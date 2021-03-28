@@ -19,4 +19,8 @@ export class AuthService {
     localStorage.clear();
   }
 
+  isAuthenticated():boolean{
+    return this.getUserDetails()!=null;
+  }
+
 }

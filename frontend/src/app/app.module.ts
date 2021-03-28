@@ -24,6 +24,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserComponent } from './user/user.component';
 import { HeaderComponent } from './user/header/header.component';
+import {JWT_OPTIONS, JwtModule} from "@auth0/angular-jwt";
 
 const icons = {
   pencilSquare,
@@ -48,7 +49,7 @@ const icons = {
     LoginComponent,
     RegisterComponent,
     UserComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,9 +59,15 @@ const icons = {
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxBootstrapIconsModule.pick(icons)
+    NgxBootstrapIconsModule.pick(icons),
+    JwtModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: JWT_OPTIONS,
+      useValue: JWT_OPTIONS
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,9 +11,11 @@ import {CreateLocationComponent} from "./user/locations/create-location/create-l
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {UserComponent} from "./user/user.component";
+import {GuardService as AuthGuard} from "./services/guard.service";
+
 
 const routes: Routes = [
-  {path: 'user',component: UserComponent, children: [
+  {path: 'user',component: UserComponent, canActivate: [AuthGuard], children: [
       {path: 'locations', component:  LocationsComponent },
       {path: 'home', component:  HomeComponent },
       {path: 'categories', component: CategoriesComponent },
