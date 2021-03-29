@@ -7,6 +7,21 @@
          margin-bottom: 250px;
         }
 
+@media (min-width: 300px) {
+    h1 { font-size: 1.05rem; }
+}
+
+@media (min-width: 576px) {
+    h1 { font-size: 1.25rem; }
+}
+@media (min-width: 768px) {
+    h1 { font-size:  50px; }
+}
+@media (min-width: 992px) {
+    h1 { font-size: 70px; }
+}
+
+
 #card1 { background-color:#faf3ea; }
 #carouselID{
  height:100%;}
