@@ -18,6 +18,7 @@
 
   Startseite
 > - sich wechselnde Startseiten-Bilder (Carousel/Slider) alle paar Sekunden
+> - Carousel bewegt sich, wenn die Maus außerhalb befindet
 
   Lagerort & Kategorie
 > - Anreihung verschiedener Lagerorte/Kategorien in einem Raster (responsiv)
