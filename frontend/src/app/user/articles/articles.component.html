@@ -1,65 +1,65 @@
 <body style="background-color: #f6f1e6">
-  <div class="col-sm-3">
-    <button type="button" class="btn btn-success" [routerLink]="['/user/createArticle']">add new Article</button>
+<div *ngIf="selectedArticleId==0" class="row">
+  <div class="col-sm-1">
+    <button style="height: 100px; margin-top: 10px;margin-left: 5px" type="button" class="btn btn-success" [routerLink]="['/user/createArticle']">add new Article</button>
   </div>
-  <div class="col-sm-11.9 row">
-    <div class="table-scrollable">
+  <div class="col-sm-11 row">
+    <div class="table-scrollable" style="margin-top: 10px">
       <div *ngIf="selectedArticleId==0 || selectedCategoryId!=0 || selectedLocationId!=0" class="container">
-
         <table class="table table-condensed table-hover" style="background-color: white">
-    <caption>List of Articles</caption>
-    <thead>
-    <tr>
-      <th>Edit</th>
-      <th>Delete</th>
-      <th>Nr.</th>
-      <th>Artikelbezeichnung</th>
-      <th>Herstellername</th>
-      <th>Einheit</th>
-      <th>Stueckzahl</th>
-      <th>Kategorie</th>
-      <th>Lagerort</th>
-      <th>Kaufdatum</th>
-      <th>Verfallsdatum</th>
-      <th>Netto_Einkaufspreis</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let article of articles; let i=index; trackBy: trackByData">
-      <td><a>
-        <i-bs [routerLink]="['/user/article/',article.id]"
-          name="pencil-square"
-          class="text-secondary"
-          width="1em"
-          height="1em">
-        </i-bs>
-      </a></td>
+          <caption>List of Articles</caption>
+          <thead>
+          <tr>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Nr.</th>
+            <th>Artikelbezeichnung</th>
+            <th>Herstellername</th>
+            <th>Einheit</th>
+            <th>Stueckzahl</th>
+            <th>Kategorie</th>
+            <th>Lagerort</th>
+            <th>Kaufdatum</th>
+            <th>Verfallsdatum</th>
+            <th>Netto_Einkaufspreis</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let article of articles; let i=index; trackBy: trackByData" [routerLink]="['/user/article/',article.id]" style="cursor: pointer">
+            <td><a>
+              <i-bs [routerLink]="['/user/article/',article.id]"
+                name="pencil-square"
+                class="text-secondary"
+                width="1em"
+                height="1em">
+              </i-bs>
+            </a></td>
 
-      <td><i-bs
-        name="trash"
-        class="text-secondary"
-        width="1em"
-        height="1em"
-      (click)="open(content,article.id)">
-      </i-bs></td>
+            <td><i-bs
+              name="trash"
+              class="text-secondary"
+              width="1em"
+              height="1em"
+            (click)="open(content,article.id)">
+            </i-bs></td>
 
-      <td>{{ article.id }}</td>
-      <td>{{article.articleDescription}}</td>
-      <td>{{article.producerName}}</td>
-      <td>{{article.unit}}</td>
-      <td>{{article.items}}</td>
-      <td>{{article.category}}</td>
-      <td>{{article.location}}</td>
-      <td>{{article.purchaseDate | date: 'dd.MM.yyyy'}}</td>
-      <td>{{article.expirationDate | date: 'dd.MM.yyyy'}}</td>
-      <td>{{article.purchasingPrice_net}}</td>
-    </tr>
-    </tbody>
-  </table>
+            <td>{{ article.id }}</td>
+            <td>{{article.articleDescription}}</td>
+            <td>{{article.producerName}}</td>
+            <td>{{article.unit}}</td>
+            <td>{{article.items}}</td>
+            <td>{{article.category}}</td>
+            <td>{{article.location}}</td>
+            <td>{{article.purchaseDate | date: 'dd.MM.yyyy'}}</td>
+            <td>{{article.expirationDate | date: 'dd.MM.yyyy'}}</td>
+            <td>{{article.purchasingPrice_net}}</td>
+          </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
-
+</div>
     <!-- UPDATE Form Article-->
   <div *ngIf="selectedArticleId>0" class="container">
     <div *ngIf="error">
