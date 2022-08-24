@@ -3,11 +3,12 @@ const router = express.Router();
 const md5 = require('md5');
 const jwt = require('jsonwebtoken');
 const mysql = require('mysql');
+const {HOST, USER, PASSWORD, DB} = require("../../backend/config/db.config");
 const con = mysql.createConnection({
-    host: "db.f4.htw-berlin.de",
-    user: "s0568990",
-    password: "Password",
-    database: "_s0568990__tanteemma"
+    host: HOST,
+    user: USER,
+    password: PASSWORD,
+    database: DB
 });
 router.post('/register', async function (req, res, next) {
     try {

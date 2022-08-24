@@ -1,3 +1,31 @@
+# Getting started
+Add a db-config-file in `/backend/config/db.config.js` with the following lines:
+```
+module.exports = {
+    HOST: "HOSTNAME",
+    USER: "USERNAME",
+    PASSWORD: "PASSWORD",
+    DB: "DATABASE_NAME"
+};
+```
+
+# How to start
+
+Go to `/frontend` and type into the console: 
+``` 
+npm i
+ng serve
+```
+
+Go to `/backend` and type into the console:
+```
+node server.js
+```
+
+Go to `/loginbackend` and type into the console:
+```
+npm start
+```
 # Funktionalitäten
   Login
 > - Eingabe von Benutzernamen und Passwort
