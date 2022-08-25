@@ -3,9 +3,16 @@
  * studi-server-Datenbank ans backend anbinden
  * @type {{PASSWORD: string, HOST: string, USER: string, DB: string}}
  */
-module.exports = {
+/*module.exports = {
     HOST: "db.f4.htw-berlin.de",
     USER: "s0568990",
     PASSWORD: "Password",
     DB: "_s0568990__tanteemma"
+};*/
+
+module.exports = {
+    HOST: "localhost",
+    USER: "root",
+    PASSWORD: "Meinach7010",
+    DB: "tante_emma"
 };
